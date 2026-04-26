@@ -2,25 +2,7 @@ public class HelloApp {
 
     public static void main(String[] args) {
 
-        String result;
-
-        if (args.length == 0) {
-            result = "World";
-        } else {
-            StringBuilder nameBuilder = new StringBuilder();
-
-            // Append all names with ", "
-            for (String name : args) {
-                nameBuilder.append(name).append(", ");
-            }
-
-            // Remove trailing ", "
-            if (nameBuilder.length() > 0) {
-                result = nameBuilder.substring(0, nameBuilder.length() - 2);
-            } else {
-                result = "World";
-            }
-        }
+        String result = (args.length == 0) ? "World" : String.join(", ", args);
 
         System.out.println("Hello, " + result + "!");
     }
