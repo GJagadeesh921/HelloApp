@@ -7,16 +7,19 @@ public class HelloApp {
         if (args.length == 0) {
             result = "World";
         } else {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder nameBuilder = new StringBuilder();
 
+            // Append all names with ", "
             for (String name : args) {
-                if (sb.length() > 0) {
-                    sb.append(", ");
-                }
-                sb.append(name);
+                nameBuilder.append(name).append(", ");
             }
 
-            result = sb.toString();
+            // Remove trailing ", "
+            if (nameBuilder.length() > 0) {
+                result = nameBuilder.substring(0, nameBuilder.length() - 2);
+            } else {
+                result = "World";
+            }
         }
 
         System.out.println("Hello, " + result + "!");
